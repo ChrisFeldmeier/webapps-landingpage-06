@@ -16,11 +16,11 @@ This application provides a dashboard for monitoring cloud infrastructure costs 
 This application was generated using AI. Each version represents an iteration of the development process, with improvements and modifications based on user prompts.
 
 ### Latest Update
-Version 14
-the Book a demo button should be clickadble and the popup should come
+Version 15
+please fix the loading errors and the book a demo button should. beclickable and the popup should come
 
 ## Repository Structure
 - `app.html`: Main application code
 - `versions/`: Contains all versions of the application
-  - `v14.html`: Current version
-  - `v14.json`: Metadata for current version
+  - `v15.html`: Current version
+  - `v15.json`: Metadata for current version
