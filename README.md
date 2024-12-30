@@ -16,11 +16,11 @@ This application provides a dashboard for monitoring cloud infrastructure costs 
 This application was generated using AI. Each version represents an iteration of the development process, with improvements and modifications based on user prompts.
 
 ### Latest Update
-Version 9
-update Webapps.store to Webapp demo
+Version 10
+fix chart.js charts so they are loading
 
 ## Repository Structure
 - `app.html`: Main application code
 - `versions/`: Contains all versions of the application
-  - `v9.html`: Current version
-  - `v9.json`: Metadata for current version
+  - `v10.html`: Current version
+  - `v10.json`: Metadata for current version
