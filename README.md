@@ -16,11 +16,11 @@ This application provides a dashboard for monitoring cloud infrastructure costs 
 This application was generated using AI. Each version represents an iteration of the development process, with improvements and modifications based on user prompts.
 
 ### Latest Update
-Version 12
-You are mounting a new html component when a previous one has not first unmounted. It is an error to render more than one html component at a time and attributes and children of these components will likely fail in unpredictable ways. Please only render a single instance of <html> and if you need to mount a new one, ensure any previous ones have unmounted first.
+Version 13
+add a book. ademo button popup
 
 ## Repository Structure
 - `app.html`: Main application code
 - `versions/`: Contains all versions of the application
-  - `v12.html`: Current version
-  - `v12.json`: Metadata for current version
+  - `v13.html`: Current version
+  - `v13.json`: Metadata for current version
