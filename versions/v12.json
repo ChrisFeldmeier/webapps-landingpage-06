@@ -1,0 +1,5 @@
+{
+  "version": 12,
+  "prompt": "You are mounting a new html component when a previous one has not first unmounted. It is an error to render more than one html component at a time and attributes and children of these components will likely fail in unpredictable ways. Please only render a single instance of <html> and if you need to mount a new one, ensure any previous ones have unmounted first.",
+  "timestamp": "2024-12-30T16:10:29.175Z"
+}
