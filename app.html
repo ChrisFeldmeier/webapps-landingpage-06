@@ -1,0 +1,345 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebApps.Store Demo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --primary-bg: #1a1f2e;
+            --secondary-bg: #252b3d;
+            --accent-green: #4cd137;
+            --accent-yellow: #fbc531;
+            --accent-blue: #487eb0;
+        }
+
+        body {
+            background-color: var(--primary-bg);
+            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        .nav-link {
+            color: #8895b3;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: white;
+        }
+
+        .dashboard-card {
+            background-color: var(--secondary-bg);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .progress-bar {
+            height: 6px;
+            border-radius: 3px;
+            margin: 8px 0;
+        }
+
+        .progress-blue { background-color: var(--accent-blue); }
+        .progress-green { background-color: var(--accent-green); }
+        .progress-yellow { background-color: var(--accent-yellow); }
+
+        .glow-button {
+            background-color: #c8ff00;
+            color: black;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            box-shadow: 0 0 20px rgba(200, 255, 0, 0.3);
+            transition: all 0.3s;
+        }
+
+        .glow-button:hover {
+            box-shadow: 0 0 30px rgba(200, 255, 0, 0.5);
+        }
+
+        .time-filter {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 4px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .time-filter:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center">
+            <svg class="w-6 h-6 mr-2" viewBox="0 0 24 24" fill="white">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+            </svg>
+            <span class="font-bold text-xl">WebApps.Store Demo</span>
+        </div>
+        <div class="flex gap-6">
+            <a href="#" class="nav-link">Enterprise</a>
+            <a href="#" class="nav-link">Pricing</a>
+            <a href="#" class="nav-link">Docs</a>
+            <a href="#" class="nav-link">FAQ</a>
+            <a href="#" class="nav-link">Sign in</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="text-center py-20">
+        <h1 class="text-6xl font-bold mb-4">Hello World 2</h1>
+        <p class="text-xl text-gray-400 mb-8">
+            Savings, visibility, and infrastructure guardrails.<br>
+            One automated platform.
+        </p>
+        <button class="glow-button">Book a demo</button>
+    </div>
+
+    <!-- Dashboard -->
+    <div class="max-w-6xl mx-auto mb-10">
+        <div class="dashboard-card">
+            <div class="flex justify-between items-center mb-6">
+                <div class="flex items-center gap-4">
+                    <select class="bg-transparent border border-gray-600 rounded-md px-3 py-1">
+                        <option>All Accounts</option>
+                    </select>
+                    <span class="font-semibold">Dashboard</span>
+                </div>
+                <div class="flex gap-3">
+                    <span class="time-filter">1M</span>
+                    <span class="time-filter">3M</span>
+                    <span class="time-filter">6M</span>
+                    <span class="time-filter">1Y</span>
+                    <span class="time-filter">ALL</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-6">
+                <!-- Overview Panel -->
+                <div class="p-6 bg-opacity-50 bg-gray-800 rounded-xl">
+                    <h3 class="font-semibold mb-4">Overview</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Net spend</span>
+                                <span>$50,104</span>
+                            </div>
+                            <div class="progress-bar progress-blue w-full"></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Saved</span>
+                                <span>$20,062</span>
+                            </div>
+                            <div class="progress-bar progress-green w-full"></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Pending savings</span>
+                                <span>$5,910</span>
+                            </div>
+                            <div class="progress-bar progress-yellow w-3/4"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Budget Panel -->
+                <div class="p-6 bg-opacity-50 bg-gray-800 rounded-xl">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-semibold mb-2">Budget</h3>
+                            <div class="text-3xl font-bold">$20K</div>
+                            <div class="text-gray-400">$2,500 left</div>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-green-400">On track</span>
+                            <div class="text-3xl font-bold">$17.5K</div>
+                            <div class="text-gray-400">Projected</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Sections -->
+        
+        <!-- Usage Analytics -->
+        <div class="dashboard-card mt-6">
+            <h3 class="font-semibold mb-4">Usage Analytics</h3>
+            <canvas id="usageChart" height="200"></canvas>
+        </div>
+
+        <!-- Cost Breakdown -->
+        <div class="dashboard-card mt-6">
+            <h3 class="font-semibold mb-4">Cost Breakdown</h3>
+            <div class="grid grid-cols-4 gap-4">
+                <div class="p-4 bg-opacity-50 bg-gray-800 rounded-lg">
+                    <h4 class="text-gray-400">Compute</h4>
+                    <div class="text-2xl font-bold">$12,450</div>
+                    <div class="text-green-400">↑ 12%</div>
+                </div>
+                <div class="p-4 bg-opacity-50 bg-gray-800 rounded-lg">
+                    <h4 class="text-gray-400">Storage</h4>
+                    <div class="text-2xl font-bold">$8,230</div>
+                    <div class="text-red-400">↓ 5%</div>
+                </div>
+                <div class="p-4 bg-opacity-50 bg-gray-800 rounded-lg">
+                    <h4 class="text-gray-400">Network</h4>
+                    <div class="text-2xl font-bold">$6,180</div>
+                    <div class="text-green-400">↑ 8%</div>
+                </div>
+                <div class="p-4 bg-opacity-50 bg-gray-800 rounded-lg">
+                    <h4 class="text-gray-400">Other</h4>
+                    <div class="text-2xl font-bold">$3,244</div>
+                    <div class="text-gray-400">− 0%</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Resource Allocation -->
+        <div class="dashboard-card mt-6">
+            <h3 class="font-semibold mb-4">Resource Allocation</h3>
+            <div class="grid grid-cols-2 gap-6">
+                <div class="p-4 bg-opacity-50 bg-gray-800 rounded-lg">
+                    <canvas id="resourceChart" height="200"></canvas>
+                </div>
+                <div class="space-y-4">
+                    <div class="p-3 bg-opacity-30 bg-gray-700 rounded-lg flex justify-between">
+                        <span>Production</span>
+                        <span>65%</span>
+                    </div>
+                    <div class="p-3 bg-opacity-30 bg-gray-700 rounded-lg flex justify-between">
+                        <span>Development</span>
+                        <span>25%</span>
+                    </div>
+                    <div class="p-3 bg-opacity-30 bg-gray-700 rounded-lg flex justify-between">
+                        <span>Testing</span>
+                        <span>10%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team Activity -->
+        <div class="dashboard-card mt-6">
+            <h3 class="font-semibold mb-4">Team Activity</h3>
+            <div class="space-y-4">
+                <div class="p-4 bg-opacity-50 bg-gray-800 rounded-lg flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-blue-500 rounded-full"></div>
+                        <div>
+                            <div class="font-semibold">Resource Optimization</div>
+                            <div class="text-gray-400">Updated 2 hours ago</div>
+                        </div>
+                    </div>
+                    <div class="text-green-400">Saved $1,240</div>
+                </div>
+                <div class="p-4 bg-opacity-50 bg-gray-800 rounded-lg flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-green-500 rounded-full"></div>
+                        <div>
+                            <div class="font-semibold">Budget Alert Created</div>
+                            <div class="text-gray-400">Updated 5 hours ago</div>
+                        </div>
+                    </div>
+                    <div class="text-yellow-400">Alert Set</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Performance Metrics -->
+        <div class="dashboard-card mt-6">
+            <h3 class="font-semibold mb-4">Performance Metrics</h3>
+            <div class="grid grid-cols-3 gap-6">
+                <div class="p-4 bg-opacity-50 bg-gray-800 rounded-lg">
+                    <div class="text-gray-400 mb-2">Response Time</div>
+                    <div class="text-3xl font-bold">245ms</div>
+                    <div class="text-green-400">↓ 12% from last week</div>
+                </div>
+                <div class="p-4 bg-opacity-50 bg-gray-800 rounded-lg">
+                    <div class="text-gray-400 mb-2">Uptime</div>
+                    <div class="text-3xl font-bold">99.99%</div>
+                    <div class="text-green-400">↑ 0.01% from last week</div>
+                </div>
+                <div class="p-4 bg-opacity-50 bg-gray-800 rounded-lg">
+                    <div class="text-gray-400 mb-2">Error Rate</div>
+                    <div class="text-3xl font-bold">0.02%</div>
+                    <div class="text-green-400">↓ 0.01% from last week</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Usage Analytics Chart
+        new Chart(document.getElementById('usageChart'), {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    label: 'Usage',
+                    data: [65, 59, 80, 81, 56, 55],
+                    borderColor: '#4cd137',
+                    tension: 0.4,
+                    fill: false
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.1)'
+                        },
+                        ticks: {
+                            color: 'rgba(255, 255, 255, 0.7)'
+                        }
+                    },
+                    x: {
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.1)'
+                        },
+                        ticks: {
+                            color: 'rgba(255, 255, 255, 0.7)'
+                        }
+                    }
+                }
+            }
+        });
+
+        // Resource Allocation Chart
+        new Chart(document.getElementById('resourceChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Production', 'Development', 'Testing'],
+                datasets: [{
+                    data: [65, 25, 10],
+                    backgroundColor: ['#4cd137', '#487eb0', '#fbc531']
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+```
