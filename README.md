@@ -16,11 +16,11 @@ This application provides a dashboard for monitoring cloud infrastructure costs 
 This application was generated using AI. Each version represents an iteration of the development process, with improvements and modifications based on user prompts.
 
 ### Latest Update
-Version 5
-schreibe bei hello world 2 irgendwas wie cost management und darunter eine passende subheadline
+Version 6
+make a better header section
 
 ## Repository Structure
 - `app.html`: Main application code
 - `versions/`: Contains all versions of the application
-  - `v5.html`: Current version
-  - `v5.json`: Metadata for current version
+  - `v6.html`: Current version
+  - `v6.json`: Metadata for current version
