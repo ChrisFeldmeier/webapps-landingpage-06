@@ -16,11 +16,11 @@ This application provides a dashboard for monitoring cloud infrastructure costs 
 This application was generated using AI. Each version represents an iteration of the development process, with improvements and modifications based on user prompts.
 
 ### Latest Update
-Version 8
-make it possible to export it tto webflow
+Version 9
+update Webapps.store to Webapp demo
 
 ## Repository Structure
 - `app.html`: Main application code
 - `versions/`: Contains all versions of the application
-  - `v8.html`: Current version
-  - `v8.json`: Metadata for current version
+  - `v9.html`: Current version
+  - `v9.json`: Metadata for current version
