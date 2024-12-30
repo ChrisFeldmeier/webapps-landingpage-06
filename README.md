@@ -10,7 +10,7 @@ This application provides a dashboard for monitoring cloud infrastructure costs 
 - Chart.js
 
 ## Live Preview
-[![App Preview](https://webapps.store/api/screenshot?url=https://webapps.store/p/233&maxage=1)](https://webapps.store/p/233)
+[![App Preview](https://webapps.store/api/screenshot?url=https://webapps.store/p/233)](https://webapps.store/p/233)
 
 ## About
 This application was generated using AI. Each version represents an iteration of the development process, with improvements and modifications based on user prompts.
